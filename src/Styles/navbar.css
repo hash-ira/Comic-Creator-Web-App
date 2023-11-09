@@ -1,14 +1,13 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;500&display=swap');
-
-body{
-    margin: 0px;
-    padding: 0px;
-}
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 .nav-list{
     list-style-type: none;    
-    font-family: 'Roboto', sans-serif;
-    background: linear-gradient(90deg, #672280 1.18%, #A626D3 100%);
+    font-family: 'Bangers';
+    background: linear-gradient(90deg, #d2afdf 1.18%, #d790f1 100%);
     color: white;
     padding: 20px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }

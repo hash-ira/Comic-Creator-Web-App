@@ -6,7 +6,7 @@ export default function Navbar(){
     return (
         <nav>
             <ul className="nav-list">
-                <li>Assignment</li>
+                <li>Comic Creator</li>
             </ul>
         </nav>
     )

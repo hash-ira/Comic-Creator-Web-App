@@ -7,8 +7,8 @@ import Carousel from './components/Carousel';
 function App() {
   return (
     <div className="App">
-      <Navbar/>
-      <Input />
+      {/* <Navbar/>
+      <Input /> */}
       <Carousel/>
     </div>
   );

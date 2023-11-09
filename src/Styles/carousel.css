@@ -37,17 +37,17 @@ html {
 }
 
 ::-webkit-scrollbar {
-  width: 1.3rem;
+  width: 5px;
 }
 
 ::-webkit-scrollbar-thumb {
-  border-radius: 1rem;
+  border-radius: 5px;
   background: #797979;
   transition: all 0.5s ease-in-out;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #222224;
+  background: #595959;
 }
 
 ::-webkit-scrollbar-track {
@@ -60,26 +60,31 @@ body {
 }
 
 .container {
+  /* border: green solid 3px; */
   max-width: 124rem;
-  padding: 4rem 1rem;
+  padding: 2rem 1rem;
   margin: 0 auto;
 }
 
 .heading {
+  /* border: red solid 3px; */
   padding: 1rem 0;
   font-size: 3.5rem;
   text-align: center;
 }
 
 .swiper_container {
-  height: 52rem;
+  /* border: grey solid 3px; */
+  height: 50rem;
   padding: 2rem 0;
   position: relative;
 }
 
 .swiper-slide {
-  width: 37rem;
-  height: 42rem;
+  /* border: yellow solid 3px; */
+  width: 37rem !important;
+  height: 37rem !important;
+  text-align: center;
   position: relative;
 }
 
@@ -87,10 +92,12 @@ body {
   .swiper_container {
     height: 47rem;
   }
+
   .swiper-slide {
     width: 28rem !important;
     height: 36rem !important;
   }
+
   .swiper-slide img {
     width: 28rem !important;
     height: 36rem !important;
@@ -99,7 +106,7 @@ body {
 
 .swiper-slide img {
   width: 37rem;
-  height: 42rem;
+  height: 37rem;
   border-radius: 2rem;
   object-fit: cover;
 }
@@ -110,16 +117,16 @@ body {
 }
 
 .slider-controler {
+  /* border: pink solid 3px; */
+  height: 0rem;
   position: relative;
   bottom: 2rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 
 .slider-controler .swiper-button-next {
-  left: 58% !important;
-  transform: translateX(-58%) !important;
+  left: 62% !important;
+  transform: translateX(-62%) !important;
+  /* transform: translateY(-44%) !important; */
 }
 
 @media (max-width: 990px) {
@@ -151,12 +158,13 @@ body {
 }
 
 .slider-controler .slider-arrow {
+  /* border: black solid 3px; */
   background: var(--white);
   width: 3.5rem;
   height: 3.5rem;
   border-radius: 50%;
-  left: 42%;
-  transform: translateX(-42%);
+  left: 38%;
+  transform: translate(-44%, -44%) !important;
   filter: drop-shadow(0px 8px 24px rgba(18, 28, 53, 0.1));
 }
 
@@ -170,8 +178,9 @@ body {
 }
 
 .swiper-pagination {
+  /* border: blue solid 3px; */
   position: relative;
-  width: 15rem !important;
+  width: 100% !important;
   bottom: 1rem;
 }
 

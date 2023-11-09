@@ -11,15 +11,14 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import images from "./../assets/images.js";
 
 function Carousel() {
-    console.log(images.data[0].src);
   return (
     <div className="container">
-      <h1 className="heading">Scene X</h1>
+      {/* <h1 className="heading">Scene X</h1> */}
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
         centeredSlides={true}
-        loop={true}
+        loop={false}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,
@@ -40,19 +39,19 @@ function Carousel() {
           <img src={images.data[0].src} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
+          <img src={images.data[1].src} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={images.data[0].src} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
+          <img src={images.data[1].src} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={images.data[0].src} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
+          <img src={images.data[1].src} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={images.data[0].src} alt="slide_image" />

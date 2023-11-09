@@ -39,8 +39,6 @@ function Input() {
   };
 
 
-  
-
   return (
     <div className="form-container">
       <input
