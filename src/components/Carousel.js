@@ -66,8 +66,8 @@ function Carousel(props) {
           </div>
           <div className="swiper-pagination"></div>
         </div>
-      </Swiper>
-    </div>
+      </Swiper >
+    </div >
   );
 }
 
