@@ -10,8 +10,9 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 import images from "./../assets/images.js";
 
-function Carousel() {
+function Carousel({imgArr, setImgArr}) {
   const [currIdx, setCurrIdx] = React.useState(0);
+  // const [imgArr, setImgArr] = React.useState([{ ImgURL: "https://avatars.githubusercontent.com/u/99635297?s=48&v=4" }, { ImgURL: "https://avatars.githubusercontent.com/u/99635297?s=48&v=4" }]);
   return (
     <div className="container">
       {/* <h1 className="heading">Scene X</h1> */}
@@ -37,28 +38,13 @@ function Carousel() {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
-        <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={images.data[1].src} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={images.data[1].src} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={images.data[1].src} alt="slide_image" />
-        </SwiperSlide>
-        <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
-        </SwiperSlide>
-
+        {
+          imgArr.map((img, index) => (
+            <SwiperSlide key={index}>
+              <img src={img.ImgURL} alt="slide_image" />
+            </SwiperSlide>
+          ))
+        }
         <div className="slider-controler">
           <div className="swiper-button-prev slider-arrow">
             <ion-icon name="arrow-back-outline"></ion-icon>
