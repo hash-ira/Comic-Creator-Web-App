@@ -1,0 +1,13 @@
+.form-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.form-input {
+    width:50vw;
+    font-family: "Karla", sans-serif;
+    border-radius: 5px;
+    border: 1px solid #D5D4D8;
+    text-indent: 5px;
+}
