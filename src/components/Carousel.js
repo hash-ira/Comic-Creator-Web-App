@@ -1,6 +1,6 @@
-import React from "react";
+import React, { useEffect } from "react";
 import "./../Styles/carousel.css"
-import { Swiper, SwiperSlide } from "swiper/react";
+import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
@@ -11,6 +11,7 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import images from "./../assets/images.js";
 
 function Carousel() {
+  const [currIdx, setCurrIdx] = React.useState(0);
   return (
     <div className="container">
       {/* <h1 className="heading">Scene X</h1> */}
@@ -19,6 +20,7 @@ function Carousel() {
         grabCursor={true}
         centeredSlides={true}
         loop={false}
+        onSlideChange={(swiper) => setCurrIdx(swiper.realIndex)}
         slidesPerView={"auto"}
         coverflowEffect={{
           rotate: 0,
