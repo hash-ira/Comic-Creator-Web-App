@@ -1,9 +1,8 @@
 import React, { useState } from "react";
 import "./../Styles/input.css"
 
-function Input() {
+function Input(props) {
   const [inputText, setInputText] = useState("");
-  const [imageURL, setImageURL] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
   const handleSubmit = async (e) => {
@@ -21,20 +20,20 @@ function Input() {
 
       if (response.ok) {
         const imageBlob = await response.blob();
-        setImageURL(URL.createObjectURL(imageBlob));
+        props.setImgURL(URL.createObjectURL(imageBlob));
         console.log(imageBlob);
         setErrorMessage(''); // Clear any previous error message
       } else if (response.status === 401) {
         setErrorMessage('Authentication failed. Please check your Bearer token.');
-        setImageURL(''); // Clear the image URL
+        props.setImgURL(''); // Clear the image URL
       } else {
         setErrorMessage('An error occurred. Please try again later.');
-        setImageURL(''); // Clear the image URL
+        props.setImgURL(''); // Clear the image URL
       }
     } catch (error) {
       console.error('Request error:', error);
       setErrorMessage('An error occurred. Please try again later.');
-      setImageURL(''); // Clear the image URL
+      props.setImgURL(''); // Clear the image URL
     }
   };
 
@@ -48,10 +47,7 @@ function Input() {
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       />
-      <button onClick={handleSubmit}>Search</button>
-      <div>
-        {imageURL && <img src={imageURL} alt="Image" />}
-      </div>
+      <button className="form-button" onClick={handleSubmit}>Search</button>
     </div>
   );
 }

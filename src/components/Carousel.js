@@ -10,7 +10,7 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 import images from "./../assets/images.js";
 
-function Carousel() {
+function Carousel(props) {
   return (
     <div className="container">
       {/* <h1 className="heading">Scene X</h1> */}
@@ -36,7 +36,7 @@ function Carousel() {
         className="swiper_container"
       >
         <SwiperSlide>
-          <img src={images.data[0].src} alt="slide_image" />
+          <img src={props.ImgURL} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={images.data[1].src} alt="slide_image" />
