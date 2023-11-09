@@ -13,7 +13,6 @@ import images from "./../assets/images.js";
 function Carousel(props) {
   return (
     <div className="container">
-      {/* <h1 className="heading">Scene X</h1> */}
       <Swiper
         effect={"coverflow"}
         grabCursor={true}
@@ -36,7 +35,7 @@ function Carousel(props) {
         className="swiper_container"
       >
         <SwiperSlide>
-          <img src={props.ImgURL} alt="slide_image" />
+          <img src={props.imgArr[0].ImgURL} alt="slide_image" />
         </SwiperSlide>
         <SwiperSlide>
           <img src={images.data[1].src} alt="slide_image" />
