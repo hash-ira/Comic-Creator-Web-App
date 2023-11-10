@@ -1,11 +1,10 @@
 import React, { useEffect, useState } from "react";
 import "./../Styles/input.css";
 
-function Input({ imgArr, setImgArr, currIdx }) {
+function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoadingIdx }) {
   console.log(currIdx);
   const [inputText, setInputText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
-  const [isLoading, setIsLoading] = useState(false);
 
   React.useEffect(
     function () {
@@ -46,6 +45,8 @@ function Input({ imgArr, setImgArr, currIdx }) {
 
     try {
       setIsLoading(true);
+      imgArr[currIdx].isLoading=true;
+      setLoadingIdx(currIdx);
       const response = await fetch(
         "https://xdwvg9no7pefghrn.us-east-1.aws.endpoints.huggingface.cloud",
         {
@@ -56,10 +57,12 @@ function Input({ imgArr, setImgArr, currIdx }) {
               "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM", // Include your Bearer token
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ inputs: inputText }),
+          body: JSON.stringify({ inputs: inputText + " Comic Style. Single Panel of comic. Dialouge text bubbles." }),
         }
       );
       setIsLoading(false);
+      imgArr[currIdx].isLoading=false;
+      setLoadingIdx(11)
       if (response.ok) {
         const imageBlob = await response.blob();
         let imageBlobURL = URL.createObjectURL(imageBlob);
@@ -84,21 +87,23 @@ function Input({ imgArr, setImgArr, currIdx }) {
   };
 
   return (
-    <div className="form-container">
-      <input
-        className="form-input"
-        type="text"
-        placeholder={`Enter promt for scene ${currIdx} `}
-        value={inputText}
-        onChange={(e) => setInputText(e.target.value)}
-      />
-      <button
-        className="form-button"
-        onClick={handleSubmit}
-        disabled={isLoading}
-      >
-        Search
-      </button>
+    <div>
+      <form type="submit" className="form-container">
+        <input
+          className="form-input"
+          type="text"
+          placeholder={`Enter prompt for scene ${currIdx + 1} `}
+          value={inputText}
+          onChange={(e) => setInputText(e.target.value)}
+        />
+        <button
+          className="form-button"
+          onClick={handleSubmit}
+          disabled={isLoading}
+        >
+          Draw
+        </button>
+      </form>
     </div>
   );
 }

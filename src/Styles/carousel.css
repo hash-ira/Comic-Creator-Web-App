@@ -1,5 +1,3 @@
-
-
 html {
   font-size: 62.5%;
   scroll-behavior: smooth;
@@ -7,19 +5,19 @@ html {
 
 @media (min-width: 1440px) {
   html {
-    zoom: 1.5;
+    zoom: 1;
   }
 }
 
 @media (min-width: 2560px) {
   html {
-    zoom: 1.7;
+    zoom: 1;
   }
 }
 
 @media (min-width: 3860px) {
   html {
-    zoom: 2.5;
+    zoom: 1;
   }
 }
 
@@ -98,6 +96,19 @@ body {
   object-fit: cover;
 }
 
+.panel-loader-container {
+  border: solid black;
+  border-color: black;
+  background: white;
+  border-width: 3px 4px 3px 5px;
+  border-radius: 95% 4% 92% 5%/4% 95% 6% 95%;
+  transform: rotate(2deg);
+  height: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
 .swiper-slide-shadow-left,
 .swiper-slide-shadow-right {
   display: none;
@@ -167,7 +178,7 @@ body {
 }
 
 .slider-controler .slider-arrow::after {
-  content: '';
+  content: "";
 }
 
 .swiper-pagination {

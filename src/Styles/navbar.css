@@ -3,11 +3,11 @@
 .nav-list{
     list-style-type: none;    
     font-family: 'Bangers';
-    background: linear-gradient(90deg, #d2afdf 1.18%, #d790f1 100%);
+    background: black;
     color: white;
-    padding: 20px;
+    padding: 10px;
 
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
