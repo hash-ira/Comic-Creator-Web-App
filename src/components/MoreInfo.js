@@ -29,9 +29,9 @@ const Content = () => (
     <ul>
       <li>
         This project was built as a part of the oncampus placement process for
-        Quicksell 2023.
+        Dashtoon 2023.
       </li>
-      <li>The app was built using ReactJS and Redux</li>
+      <li>The app was built using ReactJS</li>
       <li>
         Source code:{" "}
         <a href="https://github.com/hash-ira/comic-creator-web-app">
@@ -42,28 +42,7 @@ const Content = () => (
     <h4>🚀 Features</h4>
     <ul>
       <li>
-        Kanban Board with <b>dynamic columns</b> and cards
-      </li>
-      <li>
-        The data is fetched from the API and stored in the <b>Redux store</b>
-      </li>
-      <li>The app is responsive and can be used on any device</li>
-      <li>
-        <b>Display Switch</b> to toggle grouping and sorting of tickets
-      </li>
-      <li>Availability of user is shown by the color of dot in the avatar</li>
-      <li>
-        <b>Drag and Drop</b> to move cards between columns. (This also changes
-        the ticket's property in the store and can be seen even after changing
-        the display state)
-      </li>
-      <li>
-        Display state is stored in the local storage and is <b>persistent</b>
-      </li>
-      <li>
-        <b>Loading screen</b> while fetching data from the API. (For
-        presentation purposes, the loader is shown for 2 seconds even if the
-        data is fetched before that)
+        lorem <b>ipsum</b> and dolo
       </li>
     </ul>
     <h4>👨‍💻 Author</h4>
@@ -76,7 +55,7 @@ const Content = () => (
       </li>
       <li>
         Email:{" "}
-        <a href="mailto:saurabh_sangam@cy.iitr.ac.in">
+        <a href="mailto:hingane_y@es.iitr.ac.in">
           hingane_y@es.iitr.ac.in
         </a>
       </li>
