@@ -6,6 +6,7 @@ import Carousel from './components/Carousel';
 
 
 function App() {
+  const [currIdx, setCurrIdx] = React.useState(0);
   const [imgArr , setImgArr] = React.useState([
     {
       id : 0,
@@ -14,47 +15,47 @@ function App() {
     },
     {
       id : 1,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 2,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 3,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 4,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 5,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 6,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 7,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 8,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     },
     {
       id : 9,
-      ImgURL: "",
+      ImgURL: "https://www.shutterstock.com/image-photo/keep-simple-word-wooden-blocks-260nw-1604630542.jpg",
       text : ""
     }
   ]
@@ -63,8 +64,17 @@ function App() {
   return (
     <div className="App">
       <Navbar/>
-      <Input imgArr = {imgArr} setImgArr = {setImgArr}/>
-      <Carousel imgArr = {imgArr} setImgArr = {setImgArr}/>
+      <Input 
+          imgArr = {imgArr} 
+          setImgArr = {setImgArr}
+          currIdx={currIdx}/>
+
+      <Carousel 
+          imgArr = {imgArr} 
+          setImgArr = {setImgArr}
+          currIdx = {currIdx}
+          setCurrIdx = {setCurrIdx}/>
+
     </div>
   );
 }

@@ -10,8 +10,8 @@ import { EffectCoverflow, Pagination, Navigation } from "swiper";
 
 import images from "./../assets/images.js";
 
-function Carousel({imgArr, setImgArr}) {
-  const [currIdx, setCurrIdx] = React.useState(0);
+function Carousel({imgArr, setImgArr , currIdx, setCurrIdx}) {
+  
   // const [imgArr, setImgArr] = React.useState([{ ImgURL: "https://avatars.githubusercontent.com/u/99635297?s=48&v=4" }, { ImgURL: "https://avatars.githubusercontent.com/u/99635297?s=48&v=4" }]);
   return (
     <div className="container">
@@ -37,6 +37,7 @@ function Carousel({imgArr, setImgArr}) {
         modules={[EffectCoverflow, Pagination, Navigation]}
         className="swiper_container"
       >
+
         {
           imgArr.map((img, index) => (
             <SwiperSlide key={index}>

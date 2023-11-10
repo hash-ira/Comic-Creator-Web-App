@@ -1,13 +1,14 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "./../Styles/input.css"
 
-function Input(props) {
-
-  const {imgArr , setImgArr} = props;
-  const currIdx = 0;
-
+function Input({imgArr , setImgArr , currIdx}) {
+  console.log(currIdx);
   const [inputText, setInputText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
+
+  React.useEffect(function(){
+    setInputText(imgArr[currIdx].text)
+  } , [currIdx]);
 
   //handling setImgArray
   function changeState(textInput , imageBlobURL){
@@ -37,7 +38,6 @@ function Input(props) {
 
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
-    const textInput = e.target.value;
 
     try {
       const response = await fetch('https://xdwvg9no7pefghrn.us-east-1.aws.endpoints.huggingface.cloud', {
@@ -54,22 +54,22 @@ function Input(props) {
 
         const imageBlob = await response.blob();
         let imageBlobURL = URL.createObjectURL(imageBlob);
-        changeState(textInput , imageBlobURL);
+        changeState(inputText , imageBlobURL);
 
         console.log(imageBlobURL);
         setErrorMessage(''); // Clear any previous error message
 
       } else if (response.status === 401) {
         setErrorMessage('Authentication failed. Please check your Bearer token.');
-        changeState(textInput , ""); // Clear the image URL
+        changeState(inputText , ""); // Clear the image URL
       } else {
         setErrorMessage('An error occurred. Please try again later.');
-        changeState(textInput , ""); // Clear the image URL
+        changeState(inputText , ""); // Clear the image URL
       }
     } catch (error) {
       console.error('Request error:', error);
       setErrorMessage('An error occurred. Please try again later.');
-      changeState(textInput , "");; // Clear the image URL
+      changeState(inputText , "");; // Clear the image URL
     }
   };
 
@@ -78,7 +78,7 @@ function Input(props) {
       <input
         className="form-input"
         type="text"
-        placeholder="Enter promt for scene 1"
+        placeholder={`Enter promt for scene ${currIdx} `}
         value={inputText}
         onChange={(e) => setInputText(e.target.value)}
       />
