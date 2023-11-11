@@ -59,13 +59,13 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
           headers: {
             Accept: "image/png",
             Authorization:
-              "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM", // Include your Bearer token
+              "Bearer " + process.env.REACT_APP_HUGGINGFACE_API_KEY,
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ inputs: inputText + " Draw in comic art style." }),
         }
       );
-      imgArr[currIdx].isLoading=false;
+      imgArr[currIdx].isLoading = false;
       setLoadingIdx(11)
       if (response.ok) {
         const imageBlob = await response.blob();
@@ -75,18 +75,18 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
       } else if (response.status === 401) {
         setErrorMessage(
           "Authentication failed. Please check your Bearer token."
-          );
-          changeState(inputText, ""); // Clear the image URL
-        } else {
-          setErrorMessage("An error occurred. Please try again later.");
-          changeState(inputText, ""); // Clear the image URL
-        }
-      } catch (error) {
-        console.error("Request error:", error);
+        );
+        changeState(inputText, ""); // Clear the image URL
+      } else {
         setErrorMessage("An error occurred. Please try again later.");
         changeState(inputText, ""); // Clear the image URL
       }
-      setIsLoading(false);
+    } catch (error) {
+      console.error("Request error:", error);
+      setErrorMessage("An error occurred. Please try again later.");
+      changeState(inputText, ""); // Clear the image URL
+    }
+    setIsLoading(false);
   };
 
   return (
