@@ -1,28 +1,20 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { Tooltip } from "react-tooltip";
 import '../Styles/Display.css';
 
 
 function Display({ imgArr }) {
-    const [showModal, setShowModal] = useState(false);
-
-    const handleButtonClick = () => {
-        setShowModal(true);
-    };
-
-    const handleCloseModal = () => {
-        setShowModal(false);
-    };
 
     return (
         <div className='display-btn-container'>
-            <button className="Display-btn" onClick={handleButtonClick} data-tooltip-id="tn-display-tooltip">Display Comic</button>
+            <button className="Display-btn" data-tooltip-id="tn-display-tooltip">Display Comic</button>
             <Tooltip id="tn-display-tooltip" clickable openOnClick>
                 <ComicPage imgArr={imgArr} />
             </Tooltip>
         </div>
     );
 }
+
 const ComicPage = ({imgArr}) => (
     <div className="display-comic-container">
         {imgArr.map((img, index) => (

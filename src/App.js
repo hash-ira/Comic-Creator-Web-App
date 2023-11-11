@@ -3,7 +3,6 @@ import "./App.css";
 import Input from "./components/Input";
 import Navbar from "./components/Navbar";
 import Carousel from "./components/Carousel";
-import MoreInfo from "./components/MoreInfo";
 import Display from "./components/Display";
 
 function App() {
@@ -97,8 +96,6 @@ function App() {
 
       <Carousel
         imgArr={imgArr}
-        setImgArr={setImgArr}
-        currIdx={currIdx}
         setCurrIdx={setCurrIdx}
         loadingIdx={loadingIdx}
       />

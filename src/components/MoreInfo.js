@@ -1,4 +1,3 @@
-import { FaLightbulb } from "react-icons/fa";
 import { Tooltip } from "react-tooltip";
 import "./../Styles/moreInfo.css"
 

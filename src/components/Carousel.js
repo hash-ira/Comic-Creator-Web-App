@@ -1,17 +1,15 @@
-import React, { useEffect } from "react";
+import React from "react";
 import "./../Styles/carousel.css";
-import { Swiper, SwiperSlide, useSwiper } from "swiper/react";
+import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/effect-coverflow";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
 
-import { EffectCoverflow, Pagination, Navigation, load } from "swiper";
-
-import images from "./../assets/images.js";
+import { EffectCoverflow, Pagination, Navigation } from "swiper";
 import { ScaleLoader } from "react-spinners";
 
-function Carousel({ imgArr, setImgArr, currIdx, setCurrIdx, loadingIdx }) {
+function Carousel({ imgArr, setCurrIdx, loadingIdx }) {
   // const [imgArr, setImgArr] = React.useState([{ ImgURL: "https://avatars.githubusercontent.com/u/99635297?s=48&v=4" }, { ImgURL: "https://avatars.githubusercontent.com/u/99635297?s=48&v=4" }]);
   return (
     <div className="container">
@@ -39,7 +37,7 @@ function Carousel({ imgArr, setImgArr, currIdx, setCurrIdx, loadingIdx }) {
       >
         {imgArr.map((img, index) => (
           <SwiperSlide key={index}>
-            {loadingIdx == 11 ? (
+            {loadingIdx === 11 ? (
               <img src={img.ImgURL} alt="slide_image" className="panel-loader-container" />
             ) : (
               <>

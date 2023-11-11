@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import "./../Styles/input.css";
 
 
@@ -8,7 +8,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
   const [errorMessage, setErrorMessage] = useState("");
 
   const onEnterPress = (e) => {
-    if (e.keyCode == 13 && e.shiftKey == false) {
+    if (e.keyCode === 13 && e.shiftKey === false) {
       e.preventDefault();
       handleSubmit(e);
     }
@@ -17,7 +17,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
     function () {
       setInputText(imgArr[currIdx].text);
     },
-    [currIdx]
+    [currIdx, imgArr]
   );
 
   //handling setImgArray
@@ -25,7 +25,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
     //remove prev state
     setImgArr(
       imgArr.filter((ele) => {
-        return ele.id != currIdx;
+        return ele.id !== currIdx;
       })
     );
 
@@ -59,7 +59,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
           headers: {
             Accept: "image/png",
             Authorization:
-              "Bearer " + process.env.REACT_APP_HUGGINGFACE_API_KEY,
+              "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM",
             "Content-Type": "application/json",
           },
           body: JSON.stringify({ inputs: inputText + " Draw in comic art style." }),
@@ -87,6 +87,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
       changeState(inputText, ""); // Clear the image URL
     }
     setIsLoading(false);
+    console.log(errorMessage);
   };
 
   return (
