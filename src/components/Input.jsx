@@ -62,7 +62,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
               "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM",
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ inputs: inputText + " Draw in comic art style." }),
+          body: JSON.stringify({ inputs: inputText + " Draw in comic art style. Add text dailogue bubble." }),
         }
       );
       imgArr[currIdx].isLoading = false;
