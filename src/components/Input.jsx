@@ -45,8 +45,6 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
     setImgArr((prev) => prev.sort((a, b) => a.id - b.id));
   }
 
-  console.log(imgArr);
-
   const handleSubmit = async (e) => {
     e.preventDefault(); // Prevent the default form submission
 
@@ -67,30 +65,28 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
           body: JSON.stringify({ inputs: inputText + " Draw in comic art style." }),
         }
       );
-      setIsLoading(false);
-      imgArr[currIdx].isLoading = false;
+      imgArr[currIdx].isLoading=false;
       setLoadingIdx(11)
       if (response.ok) {
         const imageBlob = await response.blob();
         let imageBlobURL = URL.createObjectURL(imageBlob);
         changeState(inputText, imageBlobURL);
-
-        console.log(imageBlobURL);
         setErrorMessage(""); // Clear any previous error message
       } else if (response.status === 401) {
         setErrorMessage(
           "Authentication failed. Please check your Bearer token."
-        );
-        changeState(inputText, ""); // Clear the image URL
-      } else {
+          );
+          changeState(inputText, ""); // Clear the image URL
+        } else {
+          setErrorMessage("An error occurred. Please try again later.");
+          changeState(inputText, ""); // Clear the image URL
+        }
+      } catch (error) {
+        console.error("Request error:", error);
         setErrorMessage("An error occurred. Please try again later.");
         changeState(inputText, ""); // Clear the image URL
       }
-    } catch (error) {
-      console.error("Request error:", error);
-      setErrorMessage("An error occurred. Please try again later.");
-      changeState(inputText, ""); // Clear the image URL
-    }
+      setIsLoading(false);
   };
 
   return (
