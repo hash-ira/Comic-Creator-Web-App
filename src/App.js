@@ -102,7 +102,9 @@ function App() {
         setCurrIdx={setCurrIdx}
         loadingIdx={loadingIdx}
       />
-      <Display />
+      <Display
+        imgArr={imgArr}
+      />
     </div>
   );
 }

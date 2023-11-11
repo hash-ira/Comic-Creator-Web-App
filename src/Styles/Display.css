@@ -1,6 +1,8 @@
 @import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
 
 .Display-btn {
+    z-index: 16;
+    cursor: pointer;
     font-family: 'Bangers';
     font-size: 3rem;
     position: absolute;
@@ -12,4 +14,50 @@
     background: #ddd;
     border: 1px solid #222;
     box-shadow: 3px 3px 0 #222;
+}
+
+#tn-display-tooltip {
+    z-index: 14;
+    position: absolute;
+    right: 0;
+    margin-left: auto;
+    margin-right: auto;
+    height: 75vh;
+    width: 98vw;
+    max-height: 80vh;
+    min-width: 350px;
+    background-color: rgba(3, 3, 3, 0.83);
+    overflow-y: auto;
+}
+
+.react-tooltip-arrow{
+    display: none !important;
+}
+
+.display-comic-container {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 0px;
+}
+
+.display-panel {
+    width: 19.5%;
+    aspect-ratio: 1/1;
+    /* flex-grow: 1; */
+    border: solid black;
+    background: white;
+    border-width: 3px 3px 3px 3px;
+    /* border-radius: 95% 4% 92% 5%/4% 95% 6% 95%; */
+}
+
+
+@media (max-width: 500px) {
+    .display-comic-container {
+        gap: 5px;
+    }
+    .display-panel {
+        width: 49%;
+        aspect-ratio: 1/1;
+    }
 }

@@ -123,7 +123,20 @@ body {
   z-index: 1;
 }
 
+.swiper-button-prev {
+  border: solid black 2px;
+  background: #ddd;
+  border: 1px solid #222;
+  box-shadow: 3px 3px 0 #222;
+  cursor: pointer;
+}
+
 .slider-controler .swiper-button-next {
+  border: solid black 2px;
+  background: #ddd;
+  border: 1px solid #222;
+  box-shadow: 3px 3px 0 #222;
+  cursor: pointer;
   left: 62% !important;
   transform: translateX(-62%) !important;
 }

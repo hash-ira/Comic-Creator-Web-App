@@ -6,7 +6,7 @@ const MoreInfo = () => {
   return (
     <>
       <div className="moreinfo-icon-btn" data-tooltip-id="tn-info-tooltip">
-        <FaLightbulb color="#EB5757" /> <span>Click Me</span>
+        <span>Click Me</span>
       </div>
       <Tooltip id="tn-info-tooltip" clickable openOnClick>
         <Content />
@@ -16,17 +16,10 @@ const MoreInfo = () => {
 };
 
 const Content = () => (
-    //Yash's code start
-
-    // <div>
-    //     <h1>cliked me succesfully</h1>
-    // </div>
-    
-    //Yash's code end
   <div className="moreinfo-project-info">
     <h2>Dashtoon Assignment</h2>
     <hr></hr>
-    <h4 style={ {marginTop:10}}>📝 Description</h4>
+    <h4 style={{ marginTop: 10 }}>📝 Description</h4>
     <ul>
       <li>
         This project was built as a part of the oncampus placement process for

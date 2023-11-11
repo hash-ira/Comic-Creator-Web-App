@@ -1,11 +1,18 @@
 import React, { useEffect, useState } from "react";
 import "./../Styles/input.css";
 
+
 function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoadingIdx }) {
   console.log(currIdx);
   const [inputText, setInputText] = useState("");
   const [errorMessage, setErrorMessage] = useState("");
 
+  const onEnterPress = (e) => {
+    if (e.keyCode == 13 && e.shiftKey == false) {
+      e.preventDefault();
+      handleSubmit(e);
+    }
+  }
   React.useEffect(
     function () {
       setInputText(imgArr[currIdx].text);
@@ -45,7 +52,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
 
     try {
       setIsLoading(true);
-      imgArr[currIdx].isLoading=true;
+      imgArr[currIdx].isLoading = true;
       setLoadingIdx(currIdx);
       const response = await fetch(
         "https://xdwvg9no7pefghrn.us-east-1.aws.endpoints.huggingface.cloud",
@@ -61,7 +68,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
         }
       );
       setIsLoading(false);
-      imgArr[currIdx].isLoading=false;
+      imgArr[currIdx].isLoading = false;
       setLoadingIdx(11)
       if (response.ok) {
         const imageBlob = await response.blob();
@@ -89,10 +96,11 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
   return (
     <div>
       <form type="submit" className="form-container">
-        <input
+        <label className="form-label">{`Enter prompt for scene ${currIdx + 1} :`}</label>
+        <textarea
+          type="text" rows="3" onKeyDown={onEnterPress}
           className="form-input"
-          type="text"
-          placeholder={`Enter prompt for scene ${currIdx + 1} `}
+          // placeholder={`Enter prompt for scene ${currIdx + 1}`}
           value={inputText}
           onChange={(e) => setInputText(e.target.value)}
         />
@@ -101,7 +109,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
           onClick={handleSubmit}
           disabled={isLoading}
         >
-          Draw
+          Sketch
         </button>
       </form>
     </div>

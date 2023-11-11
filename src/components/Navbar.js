@@ -8,7 +8,7 @@ export default function Navbar() {
     return (
         <nav>
             <ul className="nav-list">
-                <li><img src={dashtoonLogo} width="40" /></li>
+                <li><img src={dashtoonLogo} width="30" /></li>
                 <li>Comic Creator</li>
                 <MoreInfo />
             </ul>

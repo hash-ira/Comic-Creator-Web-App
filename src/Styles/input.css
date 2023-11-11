@@ -8,11 +8,21 @@
 .form-input {
   width: 30vw;
   min-width: 300px;
-  height: 35px;
+  height: 60px;
   font-family: "Shantell Sans", sans-serif;
   border-radius: 5px;
-  border: 1px solid #d5d4d8;
-  text-indent: 5px;
+  border: 1px solid #000;
+  background: #eee;
+  padding: 4px;
+  margin-top: 4px;
+}
+
+.form-label{
+  font-family: "Shantell Sans", sans-serif;
+  font-size: 1.5rem;
+  margin-top: 5px;
+  width: 30vw;
+  min-width: 300px;
 }
 
 .form-button {
@@ -20,7 +30,7 @@
   min-width: 80px;
   font-family: 'Bangers';
   font-size: 2rem;
-  transform: rotate(2deg);
+  transform: rotate(-2deg);
   margin: 15px;
   padding: 5px 10px;
   background: #ddd;
