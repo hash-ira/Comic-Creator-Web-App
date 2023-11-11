@@ -3,13 +3,14 @@ import "./../Styles/navbar.css"
 import "./MoreInfo.js"
 import MoreInfo from "./MoreInfo.js";
 import dashtoonLogo from "../assets/dashtoon_logo.png";
-export default function Navbar(){
+export default function Navbar() {
 
     return (
         <nav>
             <ul className="nav-list">
-                <li><img src={dashtoonLogo} width="40"/></li>
-                <MoreInfo/>
+                <li><img src={dashtoonLogo} width="40" /></li>
+                <li>Comic Creator</li>
+                <MoreInfo />
             </ul>
         </nav>
     )

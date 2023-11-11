@@ -57,7 +57,7 @@ function Input({ imgArr, setImgArr, currIdx, isLoading, setIsLoading, setLoading
               "Bearer VknySbLLTUjbxXAXCjyfaFIPwUTCeRXbFSOjwRiCxsxFyhbnGjSFalPKrpvvDAaPVzWEevPljilLVDBiTzfIbWFdxOkYJxnOPoHhkkVGzAknaOulWggusSFewzpqsNWM", // Include your Bearer token
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ inputs: inputText + " Comic Style. Single Panel of comic. Dialouge text bubbles." }),
+          body: JSON.stringify({ inputs: inputText + " Draw in comic art style." }),
         }
       );
       setIsLoading(false);

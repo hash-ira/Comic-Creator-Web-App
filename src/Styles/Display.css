@@ -1,0 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Bangers&display=swap');
+
+.Display-btn {
+    font-family: 'Bangers';
+    font-size: 3rem;
+    position: absolute;
+    bottom: 2rem;
+    right: 2rem;
+    transform: rotate(2deg);
+    margin: 15px;
+    padding: 5px 10px;
+    background: #ddd;
+    border: 1px solid #222;
+    box-shadow: 3px 3px 0 #222;
+}

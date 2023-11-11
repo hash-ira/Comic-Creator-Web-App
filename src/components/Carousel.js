@@ -40,7 +40,7 @@ function Carousel({ imgArr, setImgArr, currIdx, setCurrIdx, loadingIdx }) {
         {imgArr.map((img, index) => (
           <SwiperSlide key={index}>
             {loadingIdx == 11 ? (
-              <img src={img.ImgURL} alt="slide_image" />
+              <img src={img.ImgURL} alt="slide_image" className="panel-loader-container" />
             ) : (
               <>
                 {index === loadingIdx ? (
@@ -48,7 +48,7 @@ function Carousel({ imgArr, setImgArr, currIdx, setCurrIdx, loadingIdx }) {
                     <ScaleLoader color="black" />
                   </div>
                 ) : (
-                  <img src={img.ImgURL} alt="slide_image" />
+                  <img src={img.ImgURL} alt="slide_image" className="panel-loader-container" />
                 )}
               </>
             )}
