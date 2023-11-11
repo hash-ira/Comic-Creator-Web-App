@@ -16,13 +16,6 @@ const MoreInfo = () => {
 };
 
 const Content = () => (
-    //Yash's code start
-
-    // <div>
-    //     <h1>cliked me succesfully</h1>
-    // </div>
-    
-    //Yash's code end
   <div className="moreinfo-project-info">
     <h2>⭐ Dashtoon Assignment</h2>
     <h4>📝 Description</h4>
@@ -42,7 +35,16 @@ const Content = () => (
     <h4>🚀 Features</h4>
     <ul>
       <li>
-        lorem <b>ipsum</b> and dolo
+        Integrated a loader component to enhance user experience during data fetching or rendering, providing visual feedback.
+      </li>
+      <li>
+        The app is responsive and can be used on any device
+      </li>
+      <li>
+        Utilized a Swiper Card component to render generated comics, providing an interactive and engaging way for users to view and navigate through their creations.
+      </li>
+      <li>
+        Maintained the project using Git for version control, allowing for collaboration and tracking changes over time.
       </li>
     </ul>
     <h4>👨‍💻 Author</h4>
