@@ -1,3 +1,4 @@
+
 *,
 *::before,
 *::after {
@@ -8,6 +9,6 @@
 }
 
 :root {
-    --primary: #6a59ff;
-    --white: #ffffff;
+  --primary: #6a59ff;
+  --white: #ffffff;
 }

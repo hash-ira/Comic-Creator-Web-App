@@ -67,6 +67,7 @@ body {
 
 .swiper-slide {
   /* border: yellow solid 3px; */
+  margin-top: 10px;
   width: 37rem !important;
   height: 37rem !important;
   text-align: center;
@@ -92,7 +93,7 @@ body {
 .swiper-slide img {
   width: 37rem;
   height: 37rem;
-  border-radius: 2rem;
+  border-radius: 5px;
   object-fit: cover;
 }
 

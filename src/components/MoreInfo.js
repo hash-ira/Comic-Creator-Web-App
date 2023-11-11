@@ -17,8 +17,9 @@ const MoreInfo = () => {
 
 const Content = () => (
   <div className="moreinfo-project-info">
-    <h2>⭐ Dashtoon Assignment</h2>
-    <h4>📝 Description</h4>
+    <h2>Dashtoon Assignment</h2>
+    <hr></hr>
+    <h4 style={ {marginTop:10}}>📝 Description</h4>
     <ul>
       <li>
         This project was built as a part of the oncampus placement process for
