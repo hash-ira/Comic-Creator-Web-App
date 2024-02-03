@@ -23,3 +23,6 @@
         Maintained the project using Git for version control, allowing for collaboration and tracking changes over time.
       </li>
     </ul>
+    <h4>Live Project Link</h4>
+    <p>The sketch part of the project will not work as the API Access has been removed by the company after the completion of the placement process</p>
+    <a href="https://master--comic-creator-web-app-yash-hingane.netlify.app/">Link</a>
